@@ -17,7 +17,11 @@ jobs:
                 cat README.md
 
             - name: Generate ASCII Artwork
-              run: cowsay -f dragon "Run for cover, I'm a DRAGON....RAWR" >> dragon.txt
+              run: |
+               sudo apt install -y cowsay
+               cowsay -f dragon "Run for cover, I'm a DRAGON....RAWR" >> dragon.txt
+               grep -i "dragon" dragon.txt
+               cat dragon.txt
 
             # - name: List Files
             #   run: ls -alh
