@@ -16,12 +16,8 @@ jobs:
                 ls -ltra
                 cat README.md
 
-            - name: Generate ASCII Artwork
-              run: |
-               sudo apt install -y cowsay
-               cowsay -f dragon "Run for cover, I'm a DRAGON....RAWR" >> dragon.txt
-               grep -i "dragon" dragon.txt
-               cat dragon.txt
+            - name: run script in repo
+              run: ./ascii-script.sh
 
             # - name: List Files
             #   run: ls -alh
