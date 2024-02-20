@@ -18,8 +18,8 @@ jobs:
 
             - name: run script in repo
               run: |
-                 chmod +x .github/workflows/ascii-script.sh
-                 .github/workflows/ascii-script.sh
+                 chmod +x ./ascii-script.sh
+                 ./ascii-script.sh
 
             # - name: List Files
             #   run: ls -alh
