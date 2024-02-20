@@ -17,7 +17,9 @@ jobs:
                 cat README.md
 
             - name: run script in repo
-              run: sudo .github/workflows/ascii-script.sh
+              run: |
+                 chmod +x .github/workflows/ascii-script.sh
+                 .github/workflows/ascii-script.sh
 
             # - name: List Files
             #   run: ls -alh
