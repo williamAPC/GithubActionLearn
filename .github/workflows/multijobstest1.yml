@@ -1,0 +1,38 @@
+name: My second Github Action workflow
+
+on: push
+
+
+jobs:
+    build_job_1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: install Cowsay library
+              run: sudo apt install -y cowsay
+
+            - name: execute Cowsay CMD
+              run: cowsay -f dragon "Run for cover, I'm a DRAGON....RAWR" >> dragon.txt
+
+            - name: first Sleep 
+              run: sleep 30
+
+                
+    test_job_2:
+        needs: build_job_1
+        runs-on: ubuntu-latest
+        steps:
+            - name: sleep for 10 seconds
+              run: sleep 10
+            - name: Test file exists
+              run: grep -i "dragon"dragon.txt
+
+
+    deploy_job_3:
+        needs: test_job_2
+        runs-on: ubuntu-latest
+        steps:
+            - name: sleep for 10 seconds
+              run: sleep 10
+            - name: read file
+              run: cat dragon.txt
+
